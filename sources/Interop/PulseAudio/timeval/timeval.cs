@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from sys/_timeval.h in FreeBSD.
-// Original source is Copyright © Holders. Licensed under the BSD 2-Clause FreeBSD License. See Notice.md in the repository root for more information.
+// Ported from sys/time.h in the Open Group Base Specifications: Issue 7
+// Original source is Copyright © The IEEE and The Open Group.
 
 using System;
 
