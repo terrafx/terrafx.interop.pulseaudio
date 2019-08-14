@@ -5,6 +5,8 @@ using NUnit.Framework;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides tests for libpulse's version functions.</summary>
+    [TestFixture]
+    [Platform("Linux")]
     public static unsafe class PulseVersionTests
     {
         /// <summary>Validates that the correct calling convention and entry point is used for <see cref="Pulse.pa_get_library_version"/>.</summary>
