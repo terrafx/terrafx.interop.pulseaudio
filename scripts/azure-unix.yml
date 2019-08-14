@@ -3,7 +3,7 @@ jobs:
   pool:
     name: ${{parameters.pool}}
   steps:
-  - bash: apt install libpulse-dev
+  - bash: sudo apt install libpulse-dev
     displayName: 'Install PulseAudio client library'
     condition: eq('${{parameters.pool}}', 'Hosted Ubuntu 1604')
   - task: Bash@3
