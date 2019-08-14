@@ -17,9 +17,11 @@ namespace TerraFX.Interop.UnitTests
 
             Assert.False(string.IsNullOrWhiteSpace(str));
 
-            // Assuming the library follows semantic versioning here. Change if
-            // not correct.
-            StringAssert.StartsWith("12.", str);
+            // This should be 12, but Azure Pipelines does not currently have
+            // newer images than Ubuntu 16.04, which uses PulseAudio 8.0
+            // https://github.com/Microsoft/azure-pipelines-image-generation/issues/506
+            Assert.True(Version.TryParse(str, out var version));
+            Assert.GreaterOrEqual(version.Major, 8);
         }
     }
 }
