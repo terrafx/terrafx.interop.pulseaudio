@@ -21,7 +21,7 @@ namespace TerraFX.Interop.UnitTests
             // newer images than Ubuntu 16.04, which uses PulseAudio 8.0
             // https://github.com/Microsoft/azure-pipelines-image-generation/issues/506
             Assert.True(Version.TryParse(str, out var version));
-            Assert.GreaterOrEqual(version.Major, 8);
+            Assert.GreaterOrEqual(version!.Major, 8);
         }
     }
 }
