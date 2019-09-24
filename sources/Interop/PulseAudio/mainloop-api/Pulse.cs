@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Pulse
     {
-        [DllImport(libraryPath, EntryPoint = "pa_mainloop_api_once", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_mainloop_api_once", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void pa_mainloop_api_once([NativeTypeName("pa_mainloop_api *")] pa_mainloop_api* m, [NativeTypeName("void (*)(pa_mainloop_api *, void *)")] IntPtr callback, [NativeTypeName("void *")] void* userdata);
     }
 }

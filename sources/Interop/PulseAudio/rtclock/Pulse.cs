@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static partial class Pulse
     {
-        [DllImport(libraryPath, EntryPoint = "pa_rtclock_now", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_rtclock_now", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_usec_t")]
         public static extern UIntPtr pa_rtclock_now();
     }

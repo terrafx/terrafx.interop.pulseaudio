@@ -10,27 +10,27 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Pulse
     {
-        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_test", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_test", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_stream_restore_test([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("pa_ext_stream_restore_test_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_read", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_read", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_stream_restore_read([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("pa_ext_stream_restore_read_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_write", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_write", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_stream_restore_write([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("pa_update_mode_t")] pa_update_mode mode, [NativeTypeName("const pa_ext_stream_restore_info []")] pa_ext_stream_restore_info data, [NativeTypeName("unsigned int")] uint n, int apply_immediately, [NativeTypeName("pa_context_success_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_delete", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_delete", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_stream_restore_delete([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("const char *const []")] sbyte* s, [NativeTypeName("pa_context_success_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_subscribe", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_subscribe", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_stream_restore_subscribe([NativeTypeName("pa_context *")] pa_context* c, int enable, [NativeTypeName("pa_context_success_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_set_subscribe_cb", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_ext_stream_restore_set_subscribe_cb", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void pa_ext_stream_restore_set_subscribe_cb([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("pa_ext_stream_restore_subscribe_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
     }
 }
