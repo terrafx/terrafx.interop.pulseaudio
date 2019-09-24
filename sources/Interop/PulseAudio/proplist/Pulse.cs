@@ -10,78 +10,78 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Pulse
     {
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_new", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_new", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_proplist *")]
         public static extern pa_proplist* pa_proplist_new();
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_free", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_free", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void pa_proplist_free([NativeTypeName("pa_proplist *")] pa_proplist* p);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_key_valid", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_key_valid", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_key_valid([NativeTypeName("const char *")] sbyte* key);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_sets", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_sets", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_sets([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const char *")] sbyte* value);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_setp", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_setp", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_setp([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* pair);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_setf", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_setf", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_setf([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const char *")] sbyte* format);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_set", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_set", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_set([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const void *")] void* data, [NativeTypeName("size_t")] UIntPtr nbytes);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_gets", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_gets", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
         public static extern sbyte* pa_proplist_gets([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_get", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_get", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_get([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const void **")] void** data, [NativeTypeName("size_t *")] UIntPtr* nbytes);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_update", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_update", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void pa_proplist_update([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("pa_update_mode_t")] pa_update_mode mode, [NativeTypeName("const pa_proplist *")] pa_proplist* other);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_unset", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_unset", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_unset([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_unset_many", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_unset_many", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_unset_many([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *const []")] sbyte* keys);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_iterate", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_iterate", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
         public static extern sbyte* pa_proplist_iterate([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("void **")] void** state);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_to_string", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_to_string", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("char *")]
         public static extern sbyte* pa_proplist_to_string([NativeTypeName("pa_proplist *")] pa_proplist* p);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_to_string_sep", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_to_string_sep", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("char *")]
         public static extern sbyte* pa_proplist_to_string_sep([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* sep);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_from_string", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_from_string", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_proplist *")]
         public static extern pa_proplist* pa_proplist_from_string([NativeTypeName("const char *")] sbyte* str);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_contains", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_contains", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_contains([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_clear", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_clear", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void pa_proplist_clear([NativeTypeName("pa_proplist *")] pa_proplist* p);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_copy", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_copy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_proplist *")]
         public static extern pa_proplist* pa_proplist_copy([NativeTypeName("const pa_proplist *")] pa_proplist* p);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_size", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_size", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("unsigned int")]
         public static extern uint pa_proplist_size([NativeTypeName("pa_proplist *")] pa_proplist* p);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_isempty", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_isempty", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_isempty([NativeTypeName("pa_proplist *")] pa_proplist* p);
 
-        [DllImport(libraryPath, EntryPoint = "pa_proplist_equal", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(libraryPath, EntryPoint = "pa_proplist_equal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_proplist_equal([NativeTypeName("pa_proplist *")] pa_proplist* a, [NativeTypeName("pa_proplist *")] pa_proplist* b);
     }
 }
