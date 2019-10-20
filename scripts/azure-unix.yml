@@ -1,11 +1,11 @@
 jobs:
 - job: ${{parameters.name}}
   pool:
-    name: ${{parameters.pool}}
+    vmImage: ${{parameters.pool}}
   steps:
   - bash: sudo apt install libpulse-dev
     displayName: 'Install PulseAudio client library'
-    condition: eq('${{parameters.pool}}', 'Hosted Ubuntu 1604')
+    condition: eq('${{parameters.pool}}', 'ubuntu-latest')
   - task: Bash@3
     displayName: 'Run scripts/cibuild.sh'
     inputs:
