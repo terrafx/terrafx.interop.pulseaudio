@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Pulse
     {
-        [DllImport(libraryPath, EntryPoint = "pa_get_library_version", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_get_library_version", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
         public static extern sbyte* pa_get_library_version();
     }

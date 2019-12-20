@@ -9,10 +9,10 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Pulse
     {
-        [DllImport(libraryPath, EntryPoint = "pa_direction_valid", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_direction_valid", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_direction_valid([NativeTypeName("pa_direction_t")] pa_direction direction);
 
-        [DllImport(libraryPath, EntryPoint = "pa_direction_to_string", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_direction_to_string", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
         public static extern sbyte* pa_direction_to_string([NativeTypeName("pa_direction_t")] pa_direction direction);
     }

@@ -10,35 +10,35 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Pulse
     {
-        [DllImport(libraryPath, EntryPoint = "pa_ext_device_manager_test", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_ext_device_manager_test", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_device_manager_test([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("pa_ext_device_manager_test_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_device_manager_read", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_ext_device_manager_read", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_device_manager_read([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("pa_ext_device_manager_read_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_device_manager_set_device_description", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_ext_device_manager_set_device_description", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_device_manager_set_device_description([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("const char *")] sbyte* device, [NativeTypeName("const char *")] sbyte* description, [NativeTypeName("pa_context_success_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_device_manager_delete", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_ext_device_manager_delete", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_device_manager_delete([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("const char *const []")] sbyte* s, [NativeTypeName("pa_context_success_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_device_manager_enable_role_device_priority_routing", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_ext_device_manager_enable_role_device_priority_routing", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_device_manager_enable_role_device_priority_routing([NativeTypeName("pa_context *")] pa_context* c, int enable, [NativeTypeName("pa_context_success_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_device_manager_reorder_devices_for_role", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_ext_device_manager_reorder_devices_for_role", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_device_manager_reorder_devices_for_role([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("const char *")] sbyte* role, [NativeTypeName("const char **")] sbyte** devices, [NativeTypeName("pa_context_success_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_device_manager_subscribe", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_ext_device_manager_subscribe", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_operation *")]
         public static extern pa_operation* pa_ext_device_manager_subscribe([NativeTypeName("pa_context *")] pa_context* c, int enable, [NativeTypeName("pa_context_success_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_ext_device_manager_set_subscribe_cb", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_ext_device_manager_set_subscribe_cb", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void pa_ext_device_manager_set_subscribe_cb([NativeTypeName("pa_context *")] pa_context* c, [NativeTypeName("pa_ext_device_manager_subscribe_cb_t")] IntPtr cb, [NativeTypeName("void *")] void* userdata);
     }
 }

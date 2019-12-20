@@ -10,20 +10,20 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Pulse
     {
-        [DllImport(libraryPath, EntryPoint = "pa_signal_init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_signal_init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int pa_signal_init([NativeTypeName("pa_mainloop_api *")] pa_mainloop_api* api);
 
-        [DllImport(libraryPath, EntryPoint = "pa_signal_done", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_signal_done", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void pa_signal_done();
 
-        [DllImport(libraryPath, EntryPoint = "pa_signal_new", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_signal_new", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("pa_signal_event *")]
         public static extern pa_signal_event* pa_signal_new(int sig, [NativeTypeName("pa_signal_cb_t")] IntPtr callback, [NativeTypeName("void *")] void* userdata);
 
-        [DllImport(libraryPath, EntryPoint = "pa_signal_free", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_signal_free", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void pa_signal_free([NativeTypeName("pa_signal_event *")] pa_signal_event* e);
 
-        [DllImport(libraryPath, EntryPoint = "pa_signal_set_destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(LibraryPath, EntryPoint = "pa_signal_set_destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void pa_signal_set_destroy([NativeTypeName("pa_signal_event *")] pa_signal_event* e, [NativeTypeName("pa_signal_destroy_cb_t")] IntPtr callback);
     }
 }
