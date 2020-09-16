@@ -1,0 +1,13 @@
+--remap
+pa_context*=IntPtr
+pa_defer_event*=IntPtr
+pa_io_event*=IntPtr
+pa_mainloop*=IntPtr
+pa_operation*=IntPtr
+pa_proplist*=IntPtr
+pa_signal_event*=IntPtr
+pa_simple*=IntPtr
+pa_stream*=IntPtr
+pa_threaded_mainloop*=IntPtr
+pa_time_event*=IntPtr
+pollfd*=IntPtr

@@ -60,15 +60,214 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.PulseAudio.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{48E1F49D-7103-4DE6-9F69-915183B85095}"
 	ProjectSection(SolutionItems) = preProject
-		scripts\azure-ci.yml = scripts\azure-ci.yml
-		scripts\azure-pipelines.yml = scripts\azure-pipelines.yml
-		scripts\azure-pr.yml = scripts\azure-pr.yml
-		scripts\azure-unix.yml = scripts\azure-unix.yml
-		scripts\azure-windows.yml = scripts\azure-windows.yml
 		scripts\build.ps1 = scripts\build.ps1
 		scripts\build.sh = scripts\build.sh
 		scripts\cibuild.cmd = scripts\cibuild.cmd
 		scripts\cibuild.sh = scripts\cibuild.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{DC4282AC-3710-4990-8051-04406F4E85B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{7BFC5B1A-8DDB-4D76-8B9D-C429BDC70329}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generation", "generation", "{61819DA1-F387-4A80-B93C-AE9D0442FD1F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\remap.rsp = generation\remap.rsp
+		generation\settings.rsp = generation\settings.rsp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pulse", "pulse", "{031F42D4-B5CB-46D1-87DE-A99236F6ED68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "channelmap", "channelmap", "{49E043C2-442E-4D65-B190-0F61B55BBCC9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\channelmap\generate.rsp = generation\pulse\channelmap\generate.rsp
+		generation\pulse\channelmap\header.txt = generation\pulse\channelmap\header.txt
+		generation\pulse\channelmap\pulse-channelmap.h = generation\pulse\channelmap\pulse-channelmap.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "context", "context", "{24A54756-67EA-4224-955D-FB015E787FDE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\context\generate.rsp = generation\pulse\context\generate.rsp
+		generation\pulse\context\header.txt = generation\pulse\context\header.txt
+		generation\pulse\context\pulse-context.h = generation\pulse\context\pulse-context.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "def", "def", "{8563F755-E4C0-4D92-92A4-A147A50C3A37}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\def\generate.rsp = generation\pulse\def\generate.rsp
+		generation\pulse\def\header.txt = generation\pulse\def\header.txt
+		generation\pulse\def\pulse-def.h = generation\pulse\def\pulse-def.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "direction", "direction", "{2509A75E-2F33-4A70-A38D-DEA674E02BEC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\direction\generate.rsp = generation\pulse\direction\generate.rsp
+		generation\pulse\direction\header.txt = generation\pulse\direction\header.txt
+		generation\pulse\direction\pulse-direction.h = generation\pulse\direction\pulse-direction.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "error", "error", "{591F11D2-9329-4275-9D99-BB88937E5415}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\error\generate.rsp = generation\pulse\error\generate.rsp
+		generation\pulse\error\header.txt = generation\pulse\error\header.txt
+		generation\pulse\error\pulse-error.h = generation\pulse\error\pulse-error.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ext-device-manager", "ext-device-manager", "{1D5AED9C-A195-499B-BD9C-5FA075094B9F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\ext-device-manager\generate.rsp = generation\pulse\ext-device-manager\generate.rsp
+		generation\pulse\ext-device-manager\header.txt = generation\pulse\ext-device-manager\header.txt
+		generation\pulse\ext-device-manager\pulse-ext-device-manager.h = generation\pulse\ext-device-manager\pulse-ext-device-manager.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ext-device-restore", "ext-device-restore", "{0E461B83-57F9-4233-9700-43F6B4144FB9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\ext-device-restore\generate.rsp = generation\pulse\ext-device-restore\generate.rsp
+		generation\pulse\ext-device-restore\header.txt = generation\pulse\ext-device-restore\header.txt
+		generation\pulse\ext-device-restore\pulse-ext-device-restore.h = generation\pulse\ext-device-restore\pulse-ext-device-restore.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ext-stream-restore", "ext-stream-restore", "{54FB66A5-3D97-4229-98D0-B06B8271886B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\ext-stream-restore\generate.rsp = generation\pulse\ext-stream-restore\generate.rsp
+		generation\pulse\ext-stream-restore\header.txt = generation\pulse\ext-stream-restore\header.txt
+		generation\pulse\ext-stream-restore\pulse-ext-stream-restore.h = generation\pulse\ext-stream-restore\pulse-ext-stream-restore.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "format", "format", "{482F9644-3331-4393-A882-CEF3A4BC1326}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\format\generate.rsp = generation\pulse\format\generate.rsp
+		generation\pulse\format\header.txt = generation\pulse\format\header.txt
+		generation\pulse\format\pulse-format.h = generation\pulse\format\pulse-format.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "introspect", "introspect", "{F9256010-2DE4-4606-B60F-CFDBFC1CB1F9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\introspect\generate.rsp = generation\pulse\introspect\generate.rsp
+		generation\pulse\introspect\header.txt = generation\pulse\introspect\header.txt
+		generation\pulse\introspect\pulse-introspect.h = generation\pulse\introspect\pulse-introspect.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mainloop", "mainloop", "{5DE96FE5-8FE9-406D-93E8-49F2785120CD}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\mainloop\generate.rsp = generation\pulse\mainloop\generate.rsp
+		generation\pulse\mainloop\header.txt = generation\pulse\mainloop\header.txt
+		generation\pulse\mainloop\pulse-mainloop.h = generation\pulse\mainloop\pulse-mainloop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mainloop-api", "mainloop-api", "{15B210A0-CC87-43BD-A9EC-A777FE79C482}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\mainloop-api\generate.rsp = generation\pulse\mainloop-api\generate.rsp
+		generation\pulse\mainloop-api\header.txt = generation\pulse\mainloop-api\header.txt
+		generation\pulse\mainloop-api\pulse-mainloop-api.h = generation\pulse\mainloop-api\pulse-mainloop-api.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mainloop-signal", "mainloop-signal", "{B2E46243-2A56-4580-B287-EB739B962433}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\mainloop-signal\generate.rsp = generation\pulse\mainloop-signal\generate.rsp
+		generation\pulse\mainloop-signal\header.txt = generation\pulse\mainloop-signal\header.txt
+		generation\pulse\mainloop-signal\pulse-mainloop-signal.h = generation\pulse\mainloop-signal\pulse-mainloop-signal.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "operation", "operation", "{F8CF79D5-B0A4-451A-A702-EDDBF6E76F2B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\operation\generate.rsp = generation\pulse\operation\generate.rsp
+		generation\pulse\operation\header.txt = generation\pulse\operation\header.txt
+		generation\pulse\operation\pulse-operation.h = generation\pulse\operation\pulse-operation.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "proplist", "proplist", "{7B9DCA33-D20E-41DD-9DE8-B4E70EEC21AF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\proplist\generate.rsp = generation\pulse\proplist\generate.rsp
+		generation\pulse\proplist\header.txt = generation\pulse\proplist\header.txt
+		generation\pulse\proplist\pulse-proplist.h = generation\pulse\proplist\pulse-proplist.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rtclock", "rtclock", "{8ED80061-5D7D-483D-9A7F-9BB9C83BF87B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\rtclock\generate.rsp = generation\pulse\rtclock\generate.rsp
+		generation\pulse\rtclock\header.txt = generation\pulse\rtclock\header.txt
+		generation\pulse\rtclock\pulse-rtclock.h = generation\pulse\rtclock\pulse-rtclock.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{17A113CE-E5D3-4DAE-973E-E7FDBB206D2E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\sample\generate.rsp = generation\pulse\sample\generate.rsp
+		generation\pulse\sample\header.txt = generation\pulse\sample\header.txt
+		generation\pulse\sample\pulse-sample.h = generation\pulse\sample\pulse-sample.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scache", "scache", "{6E910DF1-07A7-4AB7-A08E-578B219F0D21}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\scache\generate.rsp = generation\pulse\scache\generate.rsp
+		generation\pulse\scache\header.txt = generation\pulse\scache\header.txt
+		generation\pulse\scache\pulse-scache.h = generation\pulse\scache\pulse-scache.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "simple", "simple", "{A7FD18DD-35E7-4D6E-902B-CF76C43017DF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\simple\generate.rsp = generation\pulse\simple\generate.rsp
+		generation\pulse\simple\header.txt = generation\pulse\simple\header.txt
+		generation\pulse\simple\pulse-simple.h = generation\pulse\simple\pulse-simple.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stream", "stream", "{B7FAEB36-E22A-4D5A-9984-059317D6D659}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\stream\generate.rsp = generation\pulse\stream\generate.rsp
+		generation\pulse\stream\header.txt = generation\pulse\stream\header.txt
+		generation\pulse\stream\pulse-stream.h = generation\pulse\stream\pulse-stream.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "subscribe", "subscribe", "{752535C2-685B-445B-8D11-9C341AD40428}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\subscribe\generate.rsp = generation\pulse\subscribe\generate.rsp
+		generation\pulse\subscribe\header.txt = generation\pulse\subscribe\header.txt
+		generation\pulse\subscribe\pulse-subscribe.h = generation\pulse\subscribe\pulse-subscribe.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "thread-mainloop", "thread-mainloop", "{E69BFB1E-3138-4C0B-8D6D-00253E094B22}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\thread-mainloop\generate.rsp = generation\pulse\thread-mainloop\generate.rsp
+		generation\pulse\thread-mainloop\header.txt = generation\pulse\thread-mainloop\header.txt
+		generation\pulse\thread-mainloop\pulse-thread-mainloop.h = generation\pulse\thread-mainloop\pulse-thread-mainloop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "timeval", "timeval", "{10C0BD53-F806-4A9E-9034-1EEF9B176E35}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\timeval\generate.rsp = generation\pulse\timeval\generate.rsp
+		generation\pulse\timeval\header.txt = generation\pulse\timeval\header.txt
+		generation\pulse\timeval\pulse-timeval.h = generation\pulse\timeval\pulse-timeval.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utf8", "utf8", "{86582CFA-DFC8-43DB-B8DC-B2799791C155}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\utf8\generate.rsp = generation\pulse\utf8\generate.rsp
+		generation\pulse\utf8\header.txt = generation\pulse\utf8\header.txt
+		generation\pulse\utf8\pulse-utf8.h = generation\pulse\utf8\pulse-utf8.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "util", "util", "{9AF882C4-C75D-459B-BADC-D6696D02BC10}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\util\generate.rsp = generation\pulse\util\generate.rsp
+		generation\pulse\util\header.txt = generation\pulse\util\header.txt
+		generation\pulse\util\pulse-util.h = generation\pulse\util\pulse-util.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "version", "version", "{4C5AB33B-53D5-4BEA-B889-EE14629C646F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\version\generate.rsp = generation\pulse\version\generate.rsp
+		generation\pulse\version\header.txt = generation\pulse\version\header.txt
+		generation\pulse\version\pulse-version.h = generation\pulse\version\pulse-version.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "volume", "volume", "{0C1B02DD-4D0F-4824-A7E6-934F6B6CE72E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\pulse\volume\generate.rsp = generation\pulse\volume\generate.rsp
+		generation\pulse\volume\header.txt = generation\pulse\volume\header.txt
+		generation\pulse\volume\pulse-volume.h = generation\pulse\volume\pulse-volume.h
 	EndProjectSection
 EndProject
 Global
@@ -91,11 +290,40 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6} = {0B821858-8E47-4485-AC06-D2E971A53EB2}
-		{7E31C739-2787-44ED-8304-7EFCEE1A2B2C} = {EFB05081-EC44-49D3-B6D1-52AE42085B5B}
 		{D68D8DF1-3215-48B5-9CDB-55FC55257A84} = {70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}
-		{6647A0AF-A750-4DEC-A153-998C23958DA3} = {7E31C739-2787-44ED-8304-7EFCEE1A2B2C}
 		{AF2F1D68-83A2-4488-9549-7F48E5036C6E} = {D68D8DF1-3215-48B5-9CDB-55FC55257A84}
+		{7E31C739-2787-44ED-8304-7EFCEE1A2B2C} = {EFB05081-EC44-49D3-B6D1-52AE42085B5B}
+		{6647A0AF-A750-4DEC-A153-998C23958DA3} = {7E31C739-2787-44ED-8304-7EFCEE1A2B2C}
 		{87D009BB-D474-4109-B3B8-1DBA36D9EB8F} = {6647A0AF-A750-4DEC-A153-998C23958DA3}
+		{7BFC5B1A-8DDB-4D76-8B9D-C429BDC70329} = {DC4282AC-3710-4990-8051-04406F4E85B5}
+		{031F42D4-B5CB-46D1-87DE-A99236F6ED68} = {61819DA1-F387-4A80-B93C-AE9D0442FD1F}
+		{49E043C2-442E-4D65-B190-0F61B55BBCC9} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{24A54756-67EA-4224-955D-FB015E787FDE} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{8563F755-E4C0-4D92-92A4-A147A50C3A37} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{2509A75E-2F33-4A70-A38D-DEA674E02BEC} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{591F11D2-9329-4275-9D99-BB88937E5415} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{1D5AED9C-A195-499B-BD9C-5FA075094B9F} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{0E461B83-57F9-4233-9700-43F6B4144FB9} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{54FB66A5-3D97-4229-98D0-B06B8271886B} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{482F9644-3331-4393-A882-CEF3A4BC1326} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{F9256010-2DE4-4606-B60F-CFDBFC1CB1F9} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{5DE96FE5-8FE9-406D-93E8-49F2785120CD} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{15B210A0-CC87-43BD-A9EC-A777FE79C482} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{B2E46243-2A56-4580-B287-EB739B962433} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{F8CF79D5-B0A4-451A-A702-EDDBF6E76F2B} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{7B9DCA33-D20E-41DD-9DE8-B4E70EEC21AF} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{8ED80061-5D7D-483D-9A7F-9BB9C83BF87B} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{17A113CE-E5D3-4DAE-973E-E7FDBB206D2E} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{6E910DF1-07A7-4AB7-A08E-578B219F0D21} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{A7FD18DD-35E7-4D6E-902B-CF76C43017DF} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{B7FAEB36-E22A-4D5A-9984-059317D6D659} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{752535C2-685B-445B-8D11-9C341AD40428} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{E69BFB1E-3138-4C0B-8D6D-00253E094B22} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{10C0BD53-F806-4A9E-9034-1EEF9B176E35} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{86582CFA-DFC8-43DB-B8DC-B2799791C155} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{9AF882C4-C75D-459B-BADC-D6696D02BC10} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{4C5AB33B-53D5-4BEA-B889-EE14629C646F} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
+		{0C1B02DD-4D0F-4824-A7E6-934F6B6CE72E} = {031F42D4-B5CB-46D1-87DE-A99236F6ED68}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

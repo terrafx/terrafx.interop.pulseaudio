@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+pulse-utf8.h
+--output
+../../../sources/Interop/PulseAudio/utf8
+--test-output
+../../../tests/Interop/PulseAudio/utf8
+--traverse
+/usr/include/pulse/utf8.h

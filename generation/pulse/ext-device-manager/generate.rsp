@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+pulse-ext-device-manager.h
+--output
+../../../sources/Interop/PulseAudio/ext-device-manager
+--test-output
+../../../tests/Interop/PulseAudio/ext-device-manager
+--traverse
+/usr/include/pulse/ext-device-manager.h

@@ -8,8 +8,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Pulse
     {
-        private const string LibraryPath = "libpulse";
-
         public static event DllImportResolver? ResolveLibrary;
 
         static Pulse()
@@ -36,11 +34,6 @@ namespace TerraFX.Interop
 
         private static bool TryResolveLibPulse(Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
         {
-            if (NativeLibrary.TryLoad("libpulse", assembly, searchPath, out nativeLibrary))
-            {
-                return true;
-            }
-
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
                 if (NativeLibrary.TryLoad("libpulse.so.0", assembly, searchPath, out nativeLibrary))
@@ -49,7 +42,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            return false;
+            return NativeLibrary.TryLoad("libpulse", assembly, searchPath, out nativeLibrary);
         }
 
         private static bool TryResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)

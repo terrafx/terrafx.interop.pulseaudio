@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from pulse/introspect.h in PulseAudio 12.2
+// Ported from include/pulse/introspect.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
 using System;
@@ -36,7 +36,7 @@ namespace TerraFX.Interop
         public sbyte* monitor_of_sink_name;
 
         [NativeTypeName("pa_usec_t")]
-        public UIntPtr latency;
+        public nuint latency;
 
         [NativeTypeName("const char *")]
         public sbyte* driver;
@@ -45,10 +45,10 @@ namespace TerraFX.Interop
         public pa_source_flags flags;
 
         [NativeTypeName("pa_proplist *")]
-        public pa_proplist* proplist;
+        public IntPtr proplist;
 
         [NativeTypeName("pa_usec_t")]
-        public UIntPtr configured_latency;
+        public nuint configured_latency;
 
         [NativeTypeName("pa_volume_t")]
         public uint base_volume;

@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+pa_subscription_match_flags
+--file
+pulse-def.h
+--output
+../../../sources/Interop/PulseAudio/def
+--test-output
+../../../tests/Interop/PulseAudio/def
+--traverse
+/usr/include/pulse/def.h

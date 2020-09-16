@@ -1,11 +1,11 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from pulse/def.h in PulseAudio 12.2
+// Ported from include/pulse/def.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
 namespace TerraFX.Interop
 {
-    //[NativeTypeName("unsigned int")]
+    [NativeTypeName("unsigned int")]
     public enum pa_context_flags : uint
     {
         PA_CONTEXT_NOFLAGS = 0x0000U,
