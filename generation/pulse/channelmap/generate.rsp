@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+pulse-channelmap.h
+--output
+../../../sources/Interop/PulseAudio/channelmap
+--test-output
+../../../tests/Interop/PulseAudio/channelmap
+--traverse
+/usr/include/pulse/channelmap.h

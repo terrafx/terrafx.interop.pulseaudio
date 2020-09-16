@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+pulse-stream.h
+--output
+../../../sources/Interop/PulseAudio/stream
+--test-output
+../../../tests/Interop/PulseAudio/stream
+--traverse
+/usr/include/pulse/stream.h

@@ -1,9 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from pulse/introspect.h in PulseAudio 12.2
+// Ported from include/pulse/introspect.h in PulseAudio 12.2
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
-
-using System;
 
 namespace TerraFX.Interop
 {
@@ -29,10 +27,10 @@ namespace TerraFX.Interop
         public pa_channel_map channel_map;
 
         [NativeTypeName("pa_usec_t")]
-        public UIntPtr buffer_usec;
+        public nuint buffer_usec;
 
         [NativeTypeName("pa_usec_t")]
-        public UIntPtr source_usec;
+        public nuint source_usec;
 
         [NativeTypeName("const char *")]
         public sbyte* resample_method;

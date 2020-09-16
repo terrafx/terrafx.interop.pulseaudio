@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+pulse-proplist.h
+--output
+../../../sources/Interop/PulseAudio/proplist
+--test-output
+../../../tests/Interop/PulseAudio/proplist
+--traverse
+/usr/include/pulse/proplist.h

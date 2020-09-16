@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+pulse-rtclock.h
+--output
+../../../sources/Interop/PulseAudio/rtclock
+--test-output
+../../../tests/Interop/PulseAudio/rtclock
+--traverse
+/usr/include/pulse/rtclock.h

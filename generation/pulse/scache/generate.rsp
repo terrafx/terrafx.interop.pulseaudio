@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+pulse-scache.h
+--output
+../../../sources/Interop/PulseAudio/scache
+--test-output
+../../../tests/Interop/PulseAudio/scache
+--traverse
+/usr/include/pulse/scache.h

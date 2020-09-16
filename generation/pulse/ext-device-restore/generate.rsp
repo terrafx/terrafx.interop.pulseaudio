@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+pulse-ext-device-restore.h
+--output
+../../../sources/Interop/PulseAudio/ext-device-restore
+--test-output
+../../../tests/Interop/PulseAudio/ext-device-restore
+--traverse
+/usr/include/pulse/ext-device-restore.h

@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+pulse-version.h
+--output
+../../../sources/Interop/PulseAudio/version
+--test-output
+../../../tests/Interop/PulseAudio/version
+--traverse
+/usr/include/pulse/version.h
