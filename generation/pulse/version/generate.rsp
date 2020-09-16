@@ -1,5 +1,8 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+PA_CHECK_VERSION
+pa_get_headers_version
 --file
 pulse-version.h
 --output

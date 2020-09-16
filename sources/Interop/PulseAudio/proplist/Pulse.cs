@@ -1,8 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from include/pulse/proplist.h in PulseAudio 12.2
+// Ported from include/pulse/proplist.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,76 +12,304 @@ namespace TerraFX.Interop
     {
         [DllImport("libpulse", ExactSpelling = true)]
         [return: NativeTypeName("pa_proplist *")]
-        public static extern pa_proplist* pa_proplist_new();
+        public static extern IntPtr pa_proplist_new();
 
         [DllImport("libpulse", ExactSpelling = true)]
-        public static extern void pa_proplist_free([NativeTypeName("pa_proplist *")] pa_proplist* p);
+        public static extern void pa_proplist_free([NativeTypeName("pa_proplist *")] IntPtr p);
 
         [DllImport("libpulse", ExactSpelling = true)]
         public static extern int pa_proplist_key_valid([NativeTypeName("const char *")] sbyte* key);
 
         [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_sets([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const char *")] sbyte* value);
+        public static extern int pa_proplist_sets([NativeTypeName("pa_proplist *")] IntPtr p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const char *")] sbyte* value);
 
         [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_setp([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* pair);
+        public static extern int pa_proplist_setp([NativeTypeName("pa_proplist *")] IntPtr p, [NativeTypeName("const char *")] sbyte* pair);
 
         [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_setf([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const char *")] sbyte* format);
+        public static extern int pa_proplist_setf([NativeTypeName("pa_proplist *")] IntPtr p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const char *")] sbyte* format);
 
         [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_set([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const void *")] void* data, [NativeTypeName("size_t")] nuint nbytes);
-
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("const char *")]
-        public static extern sbyte* pa_proplist_gets([NativeTypeName("const pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key);
-
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_get([NativeTypeName("const pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const void **")] void** data, [NativeTypeName("size_t *")] nuint* nbytes);
-
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern void pa_proplist_update([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("pa_update_mode_t")] pa_update_mode mode, [NativeTypeName("const pa_proplist *")] pa_proplist* other);
-
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_unset([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key);
-
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_unset_many([NativeTypeName("pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *const []")] sbyte** keys);
+        public static extern int pa_proplist_set([NativeTypeName("pa_proplist *")] IntPtr p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const void *")] void* data, [NativeTypeName("size_t")] nuint nbytes);
 
         [DllImport("libpulse", ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
-        public static extern sbyte* pa_proplist_iterate([NativeTypeName("const pa_proplist *")] pa_proplist* p, [NativeTypeName("void **")] void** state);
+        public static extern sbyte* pa_proplist_gets([NativeTypeName("const pa_proplist *")] IntPtr p, [NativeTypeName("const char *")] sbyte* key);
+
+        [DllImport("libpulse", ExactSpelling = true)]
+        public static extern int pa_proplist_get([NativeTypeName("const pa_proplist *")] IntPtr p, [NativeTypeName("const char *")] sbyte* key, [NativeTypeName("const void **")] void** data, [NativeTypeName("size_t *")] nuint* nbytes);
+
+        [DllImport("libpulse", ExactSpelling = true)]
+        public static extern void pa_proplist_update([NativeTypeName("pa_proplist *")] IntPtr p, [NativeTypeName("pa_update_mode_t")] pa_update_mode mode, [NativeTypeName("const pa_proplist *")] IntPtr other);
+
+        [DllImport("libpulse", ExactSpelling = true)]
+        public static extern int pa_proplist_unset([NativeTypeName("pa_proplist *")] IntPtr p, [NativeTypeName("const char *")] sbyte* key);
+
+        [DllImport("libpulse", ExactSpelling = true)]
+        public static extern int pa_proplist_unset_many([NativeTypeName("pa_proplist *")] IntPtr p, [NativeTypeName("const char *const []")] sbyte** keys);
+
+        [DllImport("libpulse", ExactSpelling = true)]
+        [return: NativeTypeName("const char *")]
+        public static extern sbyte* pa_proplist_iterate([NativeTypeName("const pa_proplist *")] IntPtr p, [NativeTypeName("void **")] void** state);
 
         [DllImport("libpulse", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_proplist_to_string([NativeTypeName("const pa_proplist *")] pa_proplist* p);
+        public static extern sbyte* pa_proplist_to_string([NativeTypeName("const pa_proplist *")] IntPtr p);
 
         [DllImport("libpulse", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_proplist_to_string_sep([NativeTypeName("const pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* sep);
+        public static extern sbyte* pa_proplist_to_string_sep([NativeTypeName("const pa_proplist *")] IntPtr p, [NativeTypeName("const char *")] sbyte* sep);
 
         [DllImport("libpulse", ExactSpelling = true)]
         [return: NativeTypeName("pa_proplist *")]
-        public static extern pa_proplist* pa_proplist_from_string([NativeTypeName("const char *")] sbyte* str);
+        public static extern IntPtr pa_proplist_from_string([NativeTypeName("const char *")] sbyte* str);
 
         [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_contains([NativeTypeName("const pa_proplist *")] pa_proplist* p, [NativeTypeName("const char *")] sbyte* key);
+        public static extern int pa_proplist_contains([NativeTypeName("const pa_proplist *")] IntPtr p, [NativeTypeName("const char *")] sbyte* key);
 
         [DllImport("libpulse", ExactSpelling = true)]
-        public static extern void pa_proplist_clear([NativeTypeName("pa_proplist *")] pa_proplist* p);
+        public static extern void pa_proplist_clear([NativeTypeName("pa_proplist *")] IntPtr p);
 
         [DllImport("libpulse", ExactSpelling = true)]
         [return: NativeTypeName("pa_proplist *")]
-        public static extern pa_proplist* pa_proplist_copy([NativeTypeName("const pa_proplist *")] pa_proplist* p);
+        public static extern IntPtr pa_proplist_copy([NativeTypeName("const pa_proplist *")] IntPtr p);
 
         [DllImport("libpulse", ExactSpelling = true)]
         [return: NativeTypeName("unsigned int")]
-        public static extern uint pa_proplist_size([NativeTypeName("const pa_proplist *")] pa_proplist* p);
+        public static extern uint pa_proplist_size([NativeTypeName("const pa_proplist *")] IntPtr p);
 
         [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_isempty([NativeTypeName("const pa_proplist *")] pa_proplist* p);
+        public static extern int pa_proplist_isempty([NativeTypeName("const pa_proplist *")] IntPtr p);
 
         [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_proplist_equal([NativeTypeName("const pa_proplist *")] pa_proplist* a, [NativeTypeName("const pa_proplist *")] pa_proplist* b);
+        public static extern int pa_proplist_equal([NativeTypeName("const pa_proplist *")] IntPtr a, [NativeTypeName("const pa_proplist *")] IntPtr b);
+
+        [NativeTypeName("#define PA_PROP_MEDIA_NAME \"media.name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_NAME => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MEDIA_TITLE \"media.title\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_TITLE => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x74, 0x69, 0x74, 0x6C, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MEDIA_ARTIST \"media.artist\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_ARTIST => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x61, 0x72, 0x74, 0x69, 0x73, 0x74, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MEDIA_COPYRIGHT \"media.copyright\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_COPYRIGHT => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x63, 0x6F, 0x70, 0x79, 0x72, 0x69, 0x67, 0x68, 0x74, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MEDIA_SOFTWARE \"media.software\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_SOFTWARE => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x73, 0x6F, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MEDIA_LANGUAGE \"media.language\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_LANGUAGE => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x6C, 0x61, 0x6E, 0x67, 0x75, 0x61, 0x67, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MEDIA_FILENAME \"media.filename\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_FILENAME => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x66, 0x69, 0x6C, 0x65, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MEDIA_ICON \"media.icon\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_ICON => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x69, 0x63, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MEDIA_ICON_NAME \"media.icon_name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_ICON_NAME => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x69, 0x63, 0x6F, 0x6E, 0x5F, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MEDIA_ROLE \"media.role\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MEDIA_ROLE => new byte[] { 0x6D, 0x65, 0x64, 0x69, 0x61, 0x2E, 0x72, 0x6F, 0x6C, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_FILTER_WANT \"filter.want\"")]
+        public static ReadOnlySpan<byte> PA_PROP_FILTER_WANT => new byte[] { 0x66, 0x69, 0x6C, 0x74, 0x65, 0x72, 0x2E, 0x77, 0x61, 0x6E, 0x74, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_FILTER_APPLY \"filter.apply\"")]
+        public static ReadOnlySpan<byte> PA_PROP_FILTER_APPLY => new byte[] { 0x66, 0x69, 0x6C, 0x74, 0x65, 0x72, 0x2E, 0x61, 0x70, 0x70, 0x6C, 0x79, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_FILTER_SUPPRESS \"filter.suppress\"")]
+        public static ReadOnlySpan<byte> PA_PROP_FILTER_SUPPRESS => new byte[] { 0x66, 0x69, 0x6C, 0x74, 0x65, 0x72, 0x2E, 0x73, 0x75, 0x70, 0x70, 0x72, 0x65, 0x73, 0x73, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_EVENT_ID \"event.id\"")]
+        public static ReadOnlySpan<byte> PA_PROP_EVENT_ID => new byte[] { 0x65, 0x76, 0x65, 0x6E, 0x74, 0x2E, 0x69, 0x64, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_EVENT_DESCRIPTION \"event.description\"")]
+        public static ReadOnlySpan<byte> PA_PROP_EVENT_DESCRIPTION => new byte[] { 0x65, 0x76, 0x65, 0x6E, 0x74, 0x2E, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_EVENT_MOUSE_X \"event.mouse.x\"")]
+        public static ReadOnlySpan<byte> PA_PROP_EVENT_MOUSE_X => new byte[] { 0x65, 0x76, 0x65, 0x6E, 0x74, 0x2E, 0x6D, 0x6F, 0x75, 0x73, 0x65, 0x2E, 0x78, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_EVENT_MOUSE_Y \"event.mouse.y\"")]
+        public static ReadOnlySpan<byte> PA_PROP_EVENT_MOUSE_Y => new byte[] { 0x65, 0x76, 0x65, 0x6E, 0x74, 0x2E, 0x6D, 0x6F, 0x75, 0x73, 0x65, 0x2E, 0x79, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_EVENT_MOUSE_HPOS \"event.mouse.hpos\"")]
+        public static ReadOnlySpan<byte> PA_PROP_EVENT_MOUSE_HPOS => new byte[] { 0x65, 0x76, 0x65, 0x6E, 0x74, 0x2E, 0x6D, 0x6F, 0x75, 0x73, 0x65, 0x2E, 0x68, 0x70, 0x6F, 0x73, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_EVENT_MOUSE_VPOS \"event.mouse.vpos\"")]
+        public static ReadOnlySpan<byte> PA_PROP_EVENT_MOUSE_VPOS => new byte[] { 0x65, 0x76, 0x65, 0x6E, 0x74, 0x2E, 0x6D, 0x6F, 0x75, 0x73, 0x65, 0x2E, 0x76, 0x70, 0x6F, 0x73, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_EVENT_MOUSE_BUTTON \"event.mouse.button\"")]
+        public static ReadOnlySpan<byte> PA_PROP_EVENT_MOUSE_BUTTON => new byte[] { 0x65, 0x76, 0x65, 0x6E, 0x74, 0x2E, 0x6D, 0x6F, 0x75, 0x73, 0x65, 0x2E, 0x62, 0x75, 0x74, 0x74, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_NAME \"window.name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_NAME => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_ID \"window.id\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_ID => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x69, 0x64, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_ICON \"window.icon\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_ICON => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x69, 0x63, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_ICON_NAME \"window.icon_name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_ICON_NAME => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x69, 0x63, 0x6F, 0x6E, 0x5F, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_X \"window.x\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_X => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x78, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_Y \"window.y\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_Y => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x79, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_WIDTH \"window.width\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_WIDTH => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x77, 0x69, 0x64, 0x74, 0x68, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_HEIGHT \"window.height\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_HEIGHT => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_HPOS \"window.hpos\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_HPOS => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x68, 0x70, 0x6F, 0x73, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_VPOS \"window.vpos\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_VPOS => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x76, 0x70, 0x6F, 0x73, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_DESKTOP \"window.desktop\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_DESKTOP => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x64, 0x65, 0x73, 0x6B, 0x74, 0x6F, 0x70, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_X11_DISPLAY \"window.x11.display\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_X11_DISPLAY => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x78, 0x31, 0x31, 0x2E, 0x64, 0x69, 0x73, 0x70, 0x6C, 0x61, 0x79, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_X11_SCREEN \"window.x11.screen\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_X11_SCREEN => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x78, 0x31, 0x31, 0x2E, 0x73, 0x63, 0x72, 0x65, 0x65, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_X11_MONITOR \"window.x11.monitor\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_X11_MONITOR => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x78, 0x31, 0x31, 0x2E, 0x6D, 0x6F, 0x6E, 0x69, 0x74, 0x6F, 0x72, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_WINDOW_X11_XID \"window.x11.xid\"")]
+        public static ReadOnlySpan<byte> PA_PROP_WINDOW_X11_XID => new byte[] { 0x77, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x2E, 0x78, 0x31, 0x31, 0x2E, 0x78, 0x69, 0x64, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_NAME \"application.name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_NAME => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_ID \"application.id\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_ID => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x69, 0x64, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_VERSION \"application.version\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_VERSION => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_ICON \"application.icon\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_ICON => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x69, 0x63, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_ICON_NAME \"application.icon_name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_ICON_NAME => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x69, 0x63, 0x6F, 0x6E, 0x5F, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_LANGUAGE \"application.language\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_LANGUAGE => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x6C, 0x61, 0x6E, 0x67, 0x75, 0x61, 0x67, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_PROCESS_ID \"application.process.id\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_PROCESS_ID => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x70, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x2E, 0x69, 0x64, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_PROCESS_BINARY \"application.process.binary\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_PROCESS_BINARY => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x70, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x2E, 0x62, 0x69, 0x6E, 0x61, 0x72, 0x79, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_PROCESS_USER \"application.process.user\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_PROCESS_USER => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x70, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x2E, 0x75, 0x73, 0x65, 0x72, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_PROCESS_HOST \"application.process.host\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_PROCESS_HOST => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x70, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x2E, 0x68, 0x6F, 0x73, 0x74, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_PROCESS_MACHINE_ID \"application.process.machine_id\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_PROCESS_MACHINE_ID => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x70, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x2E, 0x6D, 0x61, 0x63, 0x68, 0x69, 0x6E, 0x65, 0x5F, 0x69, 0x64, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_APPLICATION_PROCESS_SESSION_ID \"application.process.session_id\"")]
+        public static ReadOnlySpan<byte> PA_PROP_APPLICATION_PROCESS_SESSION_ID => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2E, 0x70, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x2E, 0x73, 0x65, 0x73, 0x73, 0x69, 0x6F, 0x6E, 0x5F, 0x69, 0x64, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_STRING \"device.string\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_STRING => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x73, 0x74, 0x72, 0x69, 0x6E, 0x67, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_API \"device.api\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_API => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x61, 0x70, 0x69, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_DESCRIPTION \"device.description\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_DESCRIPTION => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_BUS_PATH \"device.bus_path\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_BUS_PATH => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x62, 0x75, 0x73, 0x5F, 0x70, 0x61, 0x74, 0x68, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_SERIAL \"device.serial\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_SERIAL => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6C, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_VENDOR_ID \"device.vendor.id\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_VENDOR_ID => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x76, 0x65, 0x6E, 0x64, 0x6F, 0x72, 0x2E, 0x69, 0x64, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_VENDOR_NAME \"device.vendor.name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_VENDOR_NAME => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x76, 0x65, 0x6E, 0x64, 0x6F, 0x72, 0x2E, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_PRODUCT_ID \"device.product.id\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_PRODUCT_ID => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x70, 0x72, 0x6F, 0x64, 0x75, 0x63, 0x74, 0x2E, 0x69, 0x64, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_PRODUCT_NAME \"device.product.name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_PRODUCT_NAME => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x70, 0x72, 0x6F, 0x64, 0x75, 0x63, 0x74, 0x2E, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_CLASS \"device.class\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_CLASS => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x63, 0x6C, 0x61, 0x73, 0x73, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_FORM_FACTOR \"device.form_factor\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_FORM_FACTOR => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x66, 0x6F, 0x72, 0x6D, 0x5F, 0x66, 0x61, 0x63, 0x74, 0x6F, 0x72, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_BUS \"device.bus\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_BUS => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x62, 0x75, 0x73, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_ICON \"device.icon\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_ICON => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x69, 0x63, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_ICON_NAME \"device.icon_name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_ICON_NAME => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x69, 0x63, 0x6F, 0x6E, 0x5F, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_ACCESS_MODE \"device.access_mode\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_ACCESS_MODE => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5F, 0x6D, 0x6F, 0x64, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_MASTER_DEVICE \"device.master_device\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_MASTER_DEVICE => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x6D, 0x61, 0x73, 0x74, 0x65, 0x72, 0x5F, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_BUFFERING_BUFFER_SIZE \"device.buffering.buffer_size\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_BUFFERING_BUFFER_SIZE => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x62, 0x75, 0x66, 0x66, 0x65, 0x72, 0x69, 0x6E, 0x67, 0x2E, 0x62, 0x75, 0x66, 0x66, 0x65, 0x72, 0x5F, 0x73, 0x69, 0x7A, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_BUFFERING_FRAGMENT_SIZE \"device.buffering.fragment_size\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_BUFFERING_FRAGMENT_SIZE => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x62, 0x75, 0x66, 0x66, 0x65, 0x72, 0x69, 0x6E, 0x67, 0x2E, 0x66, 0x72, 0x61, 0x67, 0x6D, 0x65, 0x6E, 0x74, 0x5F, 0x73, 0x69, 0x7A, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_PROFILE_NAME \"device.profile.name\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_PROFILE_NAME => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x70, 0x72, 0x6F, 0x66, 0x69, 0x6C, 0x65, 0x2E, 0x6E, 0x61, 0x6D, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_INTENDED_ROLES \"device.intended_roles\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_INTENDED_ROLES => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x69, 0x6E, 0x74, 0x65, 0x6E, 0x64, 0x65, 0x64, 0x5F, 0x72, 0x6F, 0x6C, 0x65, 0x73, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_DEVICE_PROFILE_DESCRIPTION \"device.profile.description\"")]
+        public static ReadOnlySpan<byte> PA_PROP_DEVICE_PROFILE_DESCRIPTION => new byte[] { 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2E, 0x70, 0x72, 0x6F, 0x66, 0x69, 0x6C, 0x65, 0x2E, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MODULE_AUTHOR \"module.author\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MODULE_AUTHOR => new byte[] { 0x6D, 0x6F, 0x64, 0x75, 0x6C, 0x65, 0x2E, 0x61, 0x75, 0x74, 0x68, 0x6F, 0x72, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MODULE_DESCRIPTION \"module.description\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MODULE_DESCRIPTION => new byte[] { 0x6D, 0x6F, 0x64, 0x75, 0x6C, 0x65, 0x2E, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MODULE_USAGE \"module.usage\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MODULE_USAGE => new byte[] { 0x6D, 0x6F, 0x64, 0x75, 0x6C, 0x65, 0x2E, 0x75, 0x73, 0x61, 0x67, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_MODULE_VERSION \"module.version\"")]
+        public static ReadOnlySpan<byte> PA_PROP_MODULE_VERSION => new byte[] { 0x6D, 0x6F, 0x64, 0x75, 0x6C, 0x65, 0x2E, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6F, 0x6E, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_FORMAT_SAMPLE_FORMAT \"format.sample_format\"")]
+        public static ReadOnlySpan<byte> PA_PROP_FORMAT_SAMPLE_FORMAT => new byte[] { 0x66, 0x6F, 0x72, 0x6D, 0x61, 0x74, 0x2E, 0x73, 0x61, 0x6D, 0x70, 0x6C, 0x65, 0x5F, 0x66, 0x6F, 0x72, 0x6D, 0x61, 0x74, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_FORMAT_RATE \"format.rate\"")]
+        public static ReadOnlySpan<byte> PA_PROP_FORMAT_RATE => new byte[] { 0x66, 0x6F, 0x72, 0x6D, 0x61, 0x74, 0x2E, 0x72, 0x61, 0x74, 0x65, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_FORMAT_CHANNELS \"format.channels\"")]
+        public static ReadOnlySpan<byte> PA_PROP_FORMAT_CHANNELS => new byte[] { 0x66, 0x6F, 0x72, 0x6D, 0x61, 0x74, 0x2E, 0x63, 0x68, 0x61, 0x6E, 0x6E, 0x65, 0x6C, 0x73, 0x00 };
+
+        [NativeTypeName("#define PA_PROP_FORMAT_CHANNEL_MAP \"format.channel_map\"")]
+        public static ReadOnlySpan<byte> PA_PROP_FORMAT_CHANNEL_MAP => new byte[] { 0x66, 0x6F, 0x72, 0x6D, 0x61, 0x74, 0x2E, 0x63, 0x68, 0x61, 0x6E, 0x6E, 0x65, 0x6C, 0x5F, 0x6D, 0x61, 0x70, 0x00 };
     }
 }

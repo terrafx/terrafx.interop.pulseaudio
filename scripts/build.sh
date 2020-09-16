@@ -105,7 +105,7 @@ function Generate {
 
   for f in $generateRspFiles; do
     pushd "$(dirname $f)" > /dev/null
-    dotnet exec /mnt/c/Repos/ClangSharp/artifacts/bin/sources/ClangSharpPInvokeGenerator/Debug/netcoreapp3.1/ClangSharpPInvokeGenerator.dll "@generate.rsp"
+    ClangSharpPInvokeGenerator "@generate.rsp"
     popd
   done
 }
@@ -221,7 +221,7 @@ if [[ ! -z "$architecture" ]]; then
   DotNetInstallDirectory="$ArtifactsDir/dotnet"
   CreateDirectory "$DotNetInstallDirectory"
 
-  . "$DotNetInstallScript" --channel master --version 5.0.100-preview.8.20417.9 --install-dir "$DotNetInstallDirectory" --architecture "$architecture"
+  . "$DotNetInstallScript" --channel master --version 5.0.100-rc.1.20452.10 --install-dir "$DotNetInstallDirectory" --architecture "$architecture"
 
   PATH="$DotNetInstallDirectory:$PATH:"
 fi

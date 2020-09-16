@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from include/pulse/volume.h in PulseAudio 12.2
+// Ported from include/pulse/volume.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
 using System.Runtime.InteropServices;
@@ -174,5 +174,41 @@ namespace TerraFX.Interop
         [DllImport("libpulse", ExactSpelling = true)]
         [return: NativeTypeName("pa_cvolume *")]
         public static extern pa_cvolume* pa_cvolume_dec([NativeTypeName("pa_cvolume *")] pa_cvolume* v, [NativeTypeName("pa_volume_t")] uint dec);
+
+        [NativeTypeName("#define PA_VOLUME_NORM ((pa_volume_t) 0x10000U)")]
+        public const uint PA_VOLUME_NORM = ((uint)(0x10000U));
+
+        [NativeTypeName("#define PA_VOLUME_MUTED ((pa_volume_t) 0U)")]
+        public const uint PA_VOLUME_MUTED = ((uint)(0U));
+
+        [NativeTypeName("#define PA_VOLUME_MAX ((pa_volume_t) UINT32_MAX/2)")]
+        public const uint PA_VOLUME_MAX = ((uint)(4294967295U) / 2);
+
+        [NativeTypeName("#define PA_VOLUME_UI_MAX (pa_sw_volume_from_dB(+11.0))")]
+        public static readonly uint PA_VOLUME_UI_MAX = (pa_sw_volume_from_dB(+11.0));
+
+        [NativeTypeName("#define PA_VOLUME_INVALID ((pa_volume_t) UINT32_MAX)")]
+        public const uint PA_VOLUME_INVALID = ((uint)(4294967295U));
+
+        [NativeTypeName("#define PA_CVOLUME_SNPRINT_MAX 320")]
+        public const int PA_CVOLUME_SNPRINT_MAX = 320;
+
+        [NativeTypeName("#define PA_SW_CVOLUME_SNPRINT_DB_MAX 448")]
+        public const int PA_SW_CVOLUME_SNPRINT_DB_MAX = 448;
+
+        [NativeTypeName("#define PA_CVOLUME_SNPRINT_VERBOSE_MAX 1984")]
+        public const int PA_CVOLUME_SNPRINT_VERBOSE_MAX = 1984;
+
+        [NativeTypeName("#define PA_VOLUME_SNPRINT_MAX 10")]
+        public const int PA_VOLUME_SNPRINT_MAX = 10;
+
+        [NativeTypeName("#define PA_SW_VOLUME_SNPRINT_DB_MAX 11")]
+        public const int PA_SW_VOLUME_SNPRINT_DB_MAX = 11;
+
+        [NativeTypeName("#define PA_VOLUME_SNPRINT_VERBOSE_MAX 35")]
+        public const int PA_VOLUME_SNPRINT_VERBOSE_MAX = 35;
+
+        [NativeTypeName("#define PA_DECIBEL_MININFTY ((double) -200.0)")]
+        public const double PA_DECIBEL_MININFTY = ((double)(-200.0));
     }
 }

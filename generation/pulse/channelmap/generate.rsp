@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+PA_CHANNEL_POSITION_MASK
 --file
 pulse-channelmap.h
 --output

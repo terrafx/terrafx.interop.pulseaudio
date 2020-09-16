@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from include/pulse/channelmap.h in PulseAudio 12.2
+// Ported from include/pulse/channelmap.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
 using System.Runtime.InteropServices;
@@ -84,5 +84,8 @@ namespace TerraFX.Interop
         [DllImport("libpulse", ExactSpelling = true)]
         [return: NativeTypeName("pa_channel_position_mask_t")]
         public static extern nuint pa_channel_map_mask([NativeTypeName("const pa_channel_map *")] pa_channel_map* map);
+
+        [NativeTypeName("#define PA_CHANNEL_MAP_SNPRINT_MAX 336")]
+        public const int PA_CHANNEL_MAP_SNPRINT_MAX = 336;
     }
 }

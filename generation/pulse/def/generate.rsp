@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+pa_subscription_match_flags
 --file
 pulse-def.h
 --output

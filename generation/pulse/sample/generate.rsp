@@ -1,5 +1,8 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+pa_sample_format_is_ne
+pa_sample_format_is_re
 --file
 pulse-sample.h
 --output

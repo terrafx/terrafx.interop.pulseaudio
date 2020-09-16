@@ -1,3 +1,5 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 using System;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
@@ -17,11 +19,8 @@ namespace TerraFX.Interop.UnitTests
 
             Assert.False(string.IsNullOrWhiteSpace(str));
 
-            // This should be 12, but Azure Pipelines does not currently have
-            // newer images than Ubuntu 16.04, which uses PulseAudio 8.0
-            // https://github.com/Microsoft/azure-pipelines-image-generation/issues/506
             Assert.True(Version.TryParse(str, out var version));
-            Assert.GreaterOrEqual(version!.Major, 8);
+            Assert.GreaterOrEqual(version!.Major, 12);
         }
     }
 }

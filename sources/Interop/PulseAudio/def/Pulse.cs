@@ -1,11 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from include/pulse/def.h in PulseAudio 12.2
+// Ported from include/pulse/def.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
+using System;
 using static TerraFX.Interop.pa_context_state;
+using static TerraFX.Interop.pa_operation_state;
 using static TerraFX.Interop.pa_sink_state;
 using static TerraFX.Interop.pa_source_state;
+using static TerraFX.Interop.pa_stream_flags;
 using static TerraFX.Interop.pa_stream_state;
 
 namespace TerraFX.Interop
@@ -41,5 +44,23 @@ namespace TerraFX.Interop
         {
             return (x == PA_SOURCE_RUNNING) ? 1 : 0;
         }
+
+        [NativeTypeName("#define PA_OPERATION_CANCELED PA_OPERATION_CANCELLED")]
+        public const pa_operation_state PA_OPERATION_CANCELED = PA_OPERATION_CANCELLED;
+
+        [NativeTypeName("#define PA_INVALID_INDEX ((uint32_t) -1)")]
+        public const uint PA_INVALID_INDEX = unchecked((uint)(-1));
+
+        [NativeTypeName("#define PA_STREAM_NOT_MONOTONOUS PA_STREAM_NOT_MONOTONIC")]
+        public const pa_stream_flags PA_STREAM_NOT_MONOTONOUS = PA_STREAM_NOT_MONOTONIC;
+
+        [NativeTypeName("#define PA_STREAM_EVENT_REQUEST_CORK \"request-cork\"")]
+        public static ReadOnlySpan<byte> PA_STREAM_EVENT_REQUEST_CORK => new byte[] { 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2D, 0x63, 0x6F, 0x72, 0x6B, 0x00 };
+
+        [NativeTypeName("#define PA_STREAM_EVENT_REQUEST_UNCORK \"request-uncork\"")]
+        public static ReadOnlySpan<byte> PA_STREAM_EVENT_REQUEST_UNCORK => new byte[] { 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2D, 0x75, 0x6E, 0x63, 0x6F, 0x72, 0x6B, 0x00 };
+
+        [NativeTypeName("#define PA_STREAM_EVENT_FORMAT_LOST \"format-lost\"")]
+        public static ReadOnlySpan<byte> PA_STREAM_EVENT_FORMAT_LOST => new byte[] { 0x66, 0x6F, 0x72, 0x6D, 0x61, 0x74, 0x2D, 0x6C, 0x6F, 0x73, 0x74, 0x00 };
     }
 }

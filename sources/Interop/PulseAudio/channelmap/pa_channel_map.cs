@@ -1,9 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from include/pulse/channelmap.h in PulseAudio 12.2
+// Ported from include/pulse/channelmap.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -53,12 +54,14 @@ namespace TerraFX.Interop
 
             public ref pa_channel_position this[int index]
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     return ref AsSpan()[index];
                 }
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<pa_channel_position> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
         }
     }
