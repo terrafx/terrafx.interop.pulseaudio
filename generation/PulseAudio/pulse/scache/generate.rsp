@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-scache.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/scache
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/scache
+--traverse
+/usr/include/pulse/scache.h

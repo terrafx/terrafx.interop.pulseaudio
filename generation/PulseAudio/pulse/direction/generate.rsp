@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-direction.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/direction
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/direction
+--traverse
+/usr/include/pulse/direction.h

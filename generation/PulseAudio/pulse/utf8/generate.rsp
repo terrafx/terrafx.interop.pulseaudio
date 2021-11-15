@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-utf8.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/utf8
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/utf8
+--traverse
+/usr/include/pulse/utf8.h

@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-timeval.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/timeval
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/timeval
+--traverse
+/usr/include/pulse/timeval.h

@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+PA_CHANNEL_POSITION_MASK
+--file
+pulse-channelmap.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/channelmap
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/channelmap
+--traverse
+/usr/include/pulse/channelmap.h

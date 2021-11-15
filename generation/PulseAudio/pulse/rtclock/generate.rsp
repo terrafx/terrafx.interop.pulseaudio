@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-rtclock.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/rtclock
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/rtclock
+--traverse
+/usr/include/pulse/rtclock.h

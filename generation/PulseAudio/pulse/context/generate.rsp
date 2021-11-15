@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-context.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/context
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/context
+--traverse
+/usr/include/pulse/context.h
