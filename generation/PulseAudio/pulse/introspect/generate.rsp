@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-introspect.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/introspect
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/introspect
+--traverse
+/usr/include/pulse/introspect.h

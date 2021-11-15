@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-mainloop-signal.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/mainloop-signal
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/mainloop-signal
+--traverse
+/usr/include/pulse/mainloop-signal.h

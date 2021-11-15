@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-error.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/error
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/error
+--traverse
+/usr/include/pulse/error.h

@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-proplist.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/proplist
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/proplist
+--traverse
+/usr/include/pulse/proplist.h

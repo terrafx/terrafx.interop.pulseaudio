@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-ext-stream-restore.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/ext-stream-restore
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/ext-stream-restore
+--traverse
+/usr/include/pulse/ext-stream-restore.h

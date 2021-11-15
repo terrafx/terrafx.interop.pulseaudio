@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-stream.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/stream
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/stream
+--traverse
+/usr/include/pulse/stream.h

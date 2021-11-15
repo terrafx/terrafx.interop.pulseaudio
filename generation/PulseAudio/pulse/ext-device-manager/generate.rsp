@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+pulse-ext-device-manager.h
+--methodClassName
+PulseAudio
+--namespace
+TerraFX.Interop.PulseAudio
+--output
+../../../../sources/Interop/PulseAudio/PulseAudio/pulse/ext-device-manager
+--test-output
+../../../../tests/Interop/PulseAudio/PulseAudio/pulse/ext-device-manager
+--traverse
+/usr/include/pulse/ext-device-manager.h
