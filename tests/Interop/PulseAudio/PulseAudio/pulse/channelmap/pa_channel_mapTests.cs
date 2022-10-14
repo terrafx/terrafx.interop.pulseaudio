@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio.UnitTests
+namespace TerraFX.Interop.PulseAudio.UnitTests;
+
+/// <summary>Provides validation of the <see cref="pa_channel_map" /> struct.</summary>
+public static unsafe partial class pa_channel_mapTests
 {
-    /// <summary>Provides validation of the <see cref="pa_channel_map" /> struct.</summary>
-    public static unsafe partial class pa_channel_mapTests
+    /// <summary>Validates that the <see cref="pa_channel_map" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="pa_channel_map" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<pa_channel_map>(), Is.EqualTo(sizeof(pa_channel_map)));
-        }
+        Assert.That(Marshal.SizeOf<pa_channel_map>(), Is.EqualTo(sizeof(pa_channel_map)));
+    }
 
-        /// <summary>Validates that the <see cref="pa_channel_map" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(pa_channel_map).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="pa_channel_map" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(pa_channel_map).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="pa_channel_map" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(pa_channel_map), Is.EqualTo(132));
-        }
+    /// <summary>Validates that the <see cref="pa_channel_map" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(pa_channel_map), Is.EqualTo(132));
     }
 }

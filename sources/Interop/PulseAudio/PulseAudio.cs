@@ -4,66 +4,65 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public static unsafe partial class PulseAudio
 {
-    public static unsafe partial class PulseAudio
+    public static event DllImportResolver? ResolveLibrary;
+
+    static PulseAudio()
     {
-        public static event DllImportResolver? ResolveLibrary;
+        NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+    }
 
-        static PulseAudio()
+    private static IntPtr OnDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
+    {
+        if (TryResolveLibrary(libraryName, assembly, searchPath, out var nativeLibrary))
         {
-            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+            return nativeLibrary;
         }
 
-        private static IntPtr OnDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
+        if (libraryName.Equals("libpulse") && TryResolveLibPulse(assembly, searchPath, out nativeLibrary))
         {
-            if (TryResolveLibrary(libraryName, assembly, searchPath, out var nativeLibrary))
-            {
-                return nativeLibrary;
-            }
-
-            if (libraryName.Equals("libpulse") && TryResolveLibPulse(assembly, searchPath, out nativeLibrary))
-            {
-                return nativeLibrary;
-            }
-
-            return IntPtr.Zero;
+            return nativeLibrary;
         }
 
-        private static bool TryResolveLibPulse(Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
+        return IntPtr.Zero;
+    }
+
+    private static bool TryResolveLibPulse(Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
+    {
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
         {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            if (NativeLibrary.TryLoad("libpulse.so.0", assembly, searchPath, out nativeLibrary))
             {
-                if (NativeLibrary.TryLoad("libpulse.so.0", assembly, searchPath, out nativeLibrary))
+                return true;
+            }
+        }
+
+        return NativeLibrary.TryLoad("libpulse", assembly, searchPath, out nativeLibrary);
+    }
+
+    private static bool TryResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
+    {
+        var resolveLibrary = ResolveLibrary;
+
+        if (resolveLibrary != null)
+        {
+            var resolvers = resolveLibrary.GetInvocationList();
+
+            foreach (DllImportResolver resolver in resolvers)
+            {
+                nativeLibrary = resolver(libraryName, assembly, searchPath);
+
+                if (nativeLibrary != IntPtr.Zero)
                 {
                     return true;
                 }
             }
-
-            return NativeLibrary.TryLoad("libpulse", assembly, searchPath, out nativeLibrary);
         }
 
-        private static bool TryResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
-        {
-            var resolveLibrary = ResolveLibrary;
-
-            if (resolveLibrary != null)
-            {
-                var resolvers = resolveLibrary.GetInvocationList();
-
-                foreach (DllImportResolver resolver in resolvers)
-                {
-                    nativeLibrary = resolver(libraryName, assembly, searchPath);
-
-                    if (nativeLibrary != IntPtr.Zero)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            nativeLibrary = IntPtr.Zero;
-            return false;
-        }
+        nativeLibrary = IntPtr.Zero;
+        return false;
     }
 }

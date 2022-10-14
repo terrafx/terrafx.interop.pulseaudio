@@ -3,33 +3,32 @@
 // Ported from include/pulse/introspect.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public unsafe partial struct pa_server_info
 {
-    public unsafe partial struct pa_server_info
-    {
-        [NativeTypeName("const char *")]
-        public sbyte* user_name;
+    [NativeTypeName("const char *")]
+    public sbyte* user_name;
 
-        [NativeTypeName("const char *")]
-        public sbyte* host_name;
+    [NativeTypeName("const char *")]
+    public sbyte* host_name;
 
-        [NativeTypeName("const char *")]
-        public sbyte* server_version;
+    [NativeTypeName("const char *")]
+    public sbyte* server_version;
 
-        [NativeTypeName("const char *")]
-        public sbyte* server_name;
+    [NativeTypeName("const char *")]
+    public sbyte* server_name;
 
-        public pa_sample_spec sample_spec;
+    public pa_sample_spec sample_spec;
 
-        [NativeTypeName("const char *")]
-        public sbyte* default_sink_name;
+    [NativeTypeName("const char *")]
+    public sbyte* default_sink_name;
 
-        [NativeTypeName("const char *")]
-        public sbyte* default_source_name;
+    [NativeTypeName("const char *")]
+    public sbyte* default_source_name;
 
-        [NativeTypeName("uint32_t")]
-        public uint cookie;
+    [NativeTypeName("uint32_t")]
+    public uint cookie;
 
-        public pa_channel_map channel_map;
-    }
+    public pa_channel_map channel_map;
 }

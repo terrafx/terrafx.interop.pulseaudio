@@ -5,11 +5,10 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public static unsafe partial class PulseAudio
 {
-    public static unsafe partial class PulseAudio
-    {
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern void pa_mainloop_api_once(pa_mainloop_api* m, [NativeTypeName("void (*)(pa_mainloop_api *, void *)")] delegate* unmanaged<pa_mainloop_api*, void*, void> callback, void* userdata);
-    }
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern void pa_mainloop_api_once(pa_mainloop_api* m, [NativeTypeName("void (*)(pa_mainloop_api *, void *)")] delegate* unmanaged<pa_mainloop_api*, void*, void> callback, void* userdata);
 }

@@ -5,12 +5,11 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public static unsafe partial class PulseAudio
 {
-    public static unsafe partial class PulseAudio
-    {
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("const char *")]
-        public static extern sbyte* pa_strerror(int error);
-    }
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("const char *")]
+    public static extern sbyte* pa_strerror(int error);
 }

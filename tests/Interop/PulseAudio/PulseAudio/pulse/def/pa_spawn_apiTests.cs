@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio.UnitTests
+namespace TerraFX.Interop.PulseAudio.UnitTests;
+
+/// <summary>Provides validation of the <see cref="pa_spawn_api" /> struct.</summary>
+public static unsafe partial class pa_spawn_apiTests
 {
-    /// <summary>Provides validation of the <see cref="pa_spawn_api" /> struct.</summary>
-    public static unsafe partial class pa_spawn_apiTests
+    /// <summary>Validates that the <see cref="pa_spawn_api" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="pa_spawn_api" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<pa_spawn_api>(), Is.EqualTo(sizeof(pa_spawn_api)));
-        }
+        Assert.That(Marshal.SizeOf<pa_spawn_api>(), Is.EqualTo(sizeof(pa_spawn_api)));
+    }
 
-        /// <summary>Validates that the <see cref="pa_spawn_api" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(pa_spawn_api).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="pa_spawn_api" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(pa_spawn_api).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="pa_spawn_api" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="pa_spawn_api" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(pa_spawn_api), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(pa_spawn_api), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(pa_spawn_api), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(pa_spawn_api), Is.EqualTo(12));
         }
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio.UnitTests
+namespace TerraFX.Interop.PulseAudio.UnitTests;
+
+/// <summary>Provides validation of the <see cref="pa_cvolume" /> struct.</summary>
+public static unsafe partial class pa_cvolumeTests
 {
-    /// <summary>Provides validation of the <see cref="pa_cvolume" /> struct.</summary>
-    public static unsafe partial class pa_cvolumeTests
+    /// <summary>Validates that the <see cref="pa_cvolume" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="pa_cvolume" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<pa_cvolume>(), Is.EqualTo(sizeof(pa_cvolume)));
-        }
+        Assert.That(Marshal.SizeOf<pa_cvolume>(), Is.EqualTo(sizeof(pa_cvolume)));
+    }
 
-        /// <summary>Validates that the <see cref="pa_cvolume" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(pa_cvolume).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="pa_cvolume" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(pa_cvolume).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="pa_cvolume" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(pa_cvolume), Is.EqualTo(132));
-        }
+    /// <summary>Validates that the <see cref="pa_cvolume" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(pa_cvolume), Is.EqualTo(132));
     }
 }
