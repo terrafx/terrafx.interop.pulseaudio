@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio
-{
-    public static unsafe partial class PulseAudio
-    {
-        [DllImport("libpulse", EntryPoint = "_Z18pa_direction_valid12pa_direction", ExactSpelling = true)]
-        public static extern int pa_direction_valid(pa_direction_t direction);
+namespace TerraFX.Interop.PulseAudio;
 
-        [DllImport("libpulse", EntryPoint = "_Z22pa_direction_to_string12pa_direction", ExactSpelling = true)]
-        [return: NativeTypeName("const char *")]
-        public static extern sbyte* pa_direction_to_string(pa_direction_t direction);
-    }
+public static unsafe partial class PulseAudio
+{
+    [DllImport("libpulse", EntryPoint = "_Z18pa_direction_valid12pa_direction", ExactSpelling = true)]
+    public static extern int pa_direction_valid(pa_direction_t direction);
+
+    [DllImport("libpulse", EntryPoint = "_Z22pa_direction_to_string12pa_direction", ExactSpelling = true)]
+    [return: NativeTypeName("const char *")]
+    public static extern sbyte* pa_direction_to_string(pa_direction_t direction);
 }

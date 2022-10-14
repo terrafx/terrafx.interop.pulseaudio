@@ -5,12 +5,11 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public static partial class PulseAudio
 {
-    public static partial class PulseAudio
-    {
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("pa_usec_t")]
-        public static extern nuint pa_rtclock_now();
-    }
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("pa_usec_t")]
+    public static extern nuint pa_rtclock_now();
 }

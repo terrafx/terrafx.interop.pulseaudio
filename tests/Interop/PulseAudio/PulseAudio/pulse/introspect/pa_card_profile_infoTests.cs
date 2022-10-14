@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio.UnitTests
+namespace TerraFX.Interop.PulseAudio.UnitTests;
+
+/// <summary>Provides validation of the <see cref="pa_card_profile_info" /> struct.</summary>
+public static unsafe partial class pa_card_profile_infoTests
 {
-    /// <summary>Provides validation of the <see cref="pa_card_profile_info" /> struct.</summary>
-    public static unsafe partial class pa_card_profile_infoTests
+    /// <summary>Validates that the <see cref="pa_card_profile_info" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="pa_card_profile_info" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<pa_card_profile_info>(), Is.EqualTo(sizeof(pa_card_profile_info)));
-        }
+        Assert.That(Marshal.SizeOf<pa_card_profile_info>(), Is.EqualTo(sizeof(pa_card_profile_info)));
+    }
 
-        /// <summary>Validates that the <see cref="pa_card_profile_info" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(pa_card_profile_info).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="pa_card_profile_info" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(pa_card_profile_info).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="pa_card_profile_info" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="pa_card_profile_info" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(pa_card_profile_info), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(pa_card_profile_info), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(pa_card_profile_info), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(pa_card_profile_info), Is.EqualTo(20));
         }
     }
 }

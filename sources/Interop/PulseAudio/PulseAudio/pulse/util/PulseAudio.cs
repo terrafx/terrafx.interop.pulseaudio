@@ -5,38 +5,37 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public static unsafe partial class PulseAudio
 {
-    public static unsafe partial class PulseAudio
-    {
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_get_user_name([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_get_user_name([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_get_host_name([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_get_host_name([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_get_fqdn([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_get_fqdn([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_get_home_dir([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_get_home_dir([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_get_binary_name([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_get_binary_name([NativeTypeName("char *")] sbyte* s, [NativeTypeName("size_t")] nuint l);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_path_get_filename([NativeTypeName("const char *")] sbyte* p);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_path_get_filename([NativeTypeName("const char *")] sbyte* p);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_msleep([NativeTypeName("unsigned long")] nuint t);
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern int pa_msleep([NativeTypeName("unsigned long")] nuint t);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_thread_make_realtime(int rtprio);
-    }
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern int pa_thread_make_realtime(int rtprio);
 }

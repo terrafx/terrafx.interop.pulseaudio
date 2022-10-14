@@ -5,32 +5,31 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public static unsafe partial class PulseAudio
 {
-    public static unsafe partial class PulseAudio
-    {
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_utf8_valid([NativeTypeName("const char *")] sbyte* str);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_utf8_valid([NativeTypeName("const char *")] sbyte* str);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_ascii_valid([NativeTypeName("const char *")] sbyte* str);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_ascii_valid([NativeTypeName("const char *")] sbyte* str);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_utf8_filter([NativeTypeName("const char *")] sbyte* str);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_utf8_filter([NativeTypeName("const char *")] sbyte* str);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_ascii_filter([NativeTypeName("const char *")] sbyte* str);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_ascii_filter([NativeTypeName("const char *")] sbyte* str);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_utf8_to_locale([NativeTypeName("const char *")] sbyte* str);
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_utf8_to_locale([NativeTypeName("const char *")] sbyte* str);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* pa_locale_to_utf8([NativeTypeName("const char *")] sbyte* str);
-    }
+    [DllImport("libpulse", ExactSpelling = true)]
+    [return: NativeTypeName("char *")]
+    public static extern sbyte* pa_locale_to_utf8([NativeTypeName("const char *")] sbyte* str);
 }

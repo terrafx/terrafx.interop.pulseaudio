@@ -5,23 +5,22 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public static unsafe partial class PulseAudio
 {
-    public static unsafe partial class PulseAudio
-    {
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern int pa_signal_init(pa_mainloop_api* api);
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern int pa_signal_init(pa_mainloop_api* api);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern void pa_signal_done();
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern void pa_signal_done();
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern pa_signal_event* pa_signal_new(int sig, [NativeTypeName("pa_signal_cb_t")] delegate* unmanaged<pa_mainloop_api*, pa_signal_event*, int, void*, void> callback, void* userdata);
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern pa_signal_event* pa_signal_new(int sig, [NativeTypeName("pa_signal_cb_t")] delegate* unmanaged<pa_mainloop_api*, pa_signal_event*, int, void*, void> callback, void* userdata);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern void pa_signal_free(pa_signal_event* e);
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern void pa_signal_free(pa_signal_event* e);
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern void pa_signal_set_destroy(pa_signal_event* e, [NativeTypeName("pa_signal_destroy_cb_t")] delegate* unmanaged<pa_mainloop_api*, pa_signal_event*, void*, void> callback);
-    }
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern void pa_signal_set_destroy(pa_signal_event* e, [NativeTypeName("pa_signal_destroy_cb_t")] delegate* unmanaged<pa_mainloop_api*, pa_signal_event*, void*, void> callback);
 }

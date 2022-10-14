@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio.UnitTests
+namespace TerraFX.Interop.PulseAudio.UnitTests;
+
+/// <summary>Provides validation of the <see cref="pa_sample_spec" /> struct.</summary>
+public static unsafe partial class pa_sample_specTests
 {
-    /// <summary>Provides validation of the <see cref="pa_sample_spec" /> struct.</summary>
-    public static unsafe partial class pa_sample_specTests
+    /// <summary>Validates that the <see cref="pa_sample_spec" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="pa_sample_spec" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<pa_sample_spec>(), Is.EqualTo(sizeof(pa_sample_spec)));
-        }
+        Assert.That(Marshal.SizeOf<pa_sample_spec>(), Is.EqualTo(sizeof(pa_sample_spec)));
+    }
 
-        /// <summary>Validates that the <see cref="pa_sample_spec" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(pa_sample_spec).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="pa_sample_spec" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(pa_sample_spec).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="pa_sample_spec" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(pa_sample_spec), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="pa_sample_spec" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(pa_sample_spec), Is.EqualTo(12));
     }
 }

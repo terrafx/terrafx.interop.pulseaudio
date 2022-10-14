@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio.UnitTests
+namespace TerraFX.Interop.PulseAudio.UnitTests;
+
+/// <summary>Provides validation of the <see cref="pa_stream" /> struct.</summary>
+public static unsafe partial class pa_streamTests
 {
-    /// <summary>Provides validation of the <see cref="pa_stream" /> struct.</summary>
-    public static unsafe partial class pa_streamTests
+    /// <summary>Validates that the <see cref="pa_stream" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="pa_stream" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<pa_stream>(), Is.EqualTo(sizeof(pa_stream)));
-        }
+        Assert.That(Marshal.SizeOf<pa_stream>(), Is.EqualTo(sizeof(pa_stream)));
+    }
 
-        /// <summary>Validates that the <see cref="pa_stream" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(pa_stream).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="pa_stream" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(pa_stream).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="pa_stream" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(pa_stream), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="pa_stream" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(pa_stream), Is.EqualTo(1));
     }
 }

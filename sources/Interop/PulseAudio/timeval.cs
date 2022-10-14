@@ -3,14 +3,13 @@
 // Ported from include/sys/time.h in the Open Group Base Specifications: Issue 7
 // Original source is Copyright © The IEEE and The Open Group.
 
-namespace TerraFX.Interop.PulseAudio
-{
-    public partial struct timeval
-    {
-        [NativeTypeName("__time_t")]
-        public nint tv_sec;
+namespace TerraFX.Interop.PulseAudio;
 
-        [NativeTypeName("__suseconds_t")]
-        public nint tv_usec;
-    }
+public partial struct timeval
+{
+    [NativeTypeName("__time_t")]
+    public nint tv_sec;
+
+    [NativeTypeName("__suseconds_t")]
+    public nint tv_usec;
 }

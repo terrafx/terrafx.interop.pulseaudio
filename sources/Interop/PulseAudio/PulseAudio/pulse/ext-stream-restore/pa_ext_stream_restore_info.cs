@@ -3,20 +3,19 @@
 // Ported from include/pulse/ext-stream-restore.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public unsafe partial struct pa_ext_stream_restore_info
 {
-    public unsafe partial struct pa_ext_stream_restore_info
-    {
-        [NativeTypeName("const char *")]
-        public sbyte* name;
+    [NativeTypeName("const char *")]
+    public sbyte* name;
 
-        public pa_channel_map channel_map;
+    public pa_channel_map channel_map;
 
-        public pa_cvolume volume;
+    public pa_cvolume volume;
 
-        [NativeTypeName("const char *")]
-        public sbyte* device;
+    [NativeTypeName("const char *")]
+    public sbyte* device;
 
-        public int mute;
-    }
+    public int mute;
 }

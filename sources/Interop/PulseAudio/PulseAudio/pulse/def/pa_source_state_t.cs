@@ -3,15 +3,14 @@
 // Ported from include/pulse/def.h in PulseAudio 13.0
 // Original source is Copyright © Holders. Licensed under the GNU Lesser Public License 2.1 (LGPL-2.1). See Notice.md in the repository root for more information.
 
-namespace TerraFX.Interop.PulseAudio
+namespace TerraFX.Interop.PulseAudio;
+
+public enum pa_source_state_t
 {
-    public enum pa_source_state_t
-    {
-        PA_SOURCE_INVALID_STATE = -1,
-        PA_SOURCE_RUNNING = 0,
-        PA_SOURCE_IDLE = 1,
-        PA_SOURCE_SUSPENDED = 2,
-        PA_SOURCE_INIT = -2,
-        PA_SOURCE_UNLINKED = -3,
-    }
+    PA_SOURCE_INVALID_STATE = -1,
+    PA_SOURCE_RUNNING = 0,
+    PA_SOURCE_IDLE = 1,
+    PA_SOURCE_SUSPENDED = 2,
+    PA_SOURCE_INIT = -2,
+    PA_SOURCE_UNLINKED = -3,
 }

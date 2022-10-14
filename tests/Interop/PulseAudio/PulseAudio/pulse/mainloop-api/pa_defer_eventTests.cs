@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio.UnitTests
+namespace TerraFX.Interop.PulseAudio.UnitTests;
+
+/// <summary>Provides validation of the <see cref="pa_defer_event" /> struct.</summary>
+public static unsafe partial class pa_defer_eventTests
 {
-    /// <summary>Provides validation of the <see cref="pa_defer_event" /> struct.</summary>
-    public static unsafe partial class pa_defer_eventTests
+    /// <summary>Validates that the <see cref="pa_defer_event" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="pa_defer_event" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<pa_defer_event>(), Is.EqualTo(sizeof(pa_defer_event)));
-        }
+        Assert.That(Marshal.SizeOf<pa_defer_event>(), Is.EqualTo(sizeof(pa_defer_event)));
+    }
 
-        /// <summary>Validates that the <see cref="pa_defer_event" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(pa_defer_event).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="pa_defer_event" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(pa_defer_event).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="pa_defer_event" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(pa_defer_event), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="pa_defer_event" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(pa_defer_event), Is.EqualTo(1));
     }
 }

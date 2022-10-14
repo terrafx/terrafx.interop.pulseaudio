@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio
-{
-    public static unsafe partial class PulseAudio
-    {
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern pa_operation* pa_context_subscribe(pa_context* c, pa_subscription_mask_t m, [NativeTypeName("pa_context_success_cb_t")] delegate* unmanaged<pa_context*, int, void*, void> cb, void* userdata);
+namespace TerraFX.Interop.PulseAudio;
 
-        [DllImport("libpulse", ExactSpelling = true)]
-        public static extern void pa_context_set_subscribe_callback(pa_context* c, [NativeTypeName("pa_context_subscribe_cb_t")] delegate* unmanaged<pa_context*, pa_subscription_event_type_t, uint, void*, void> cb, void* userdata);
-    }
+public static unsafe partial class PulseAudio
+{
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern pa_operation* pa_context_subscribe(pa_context* c, pa_subscription_mask_t m, [NativeTypeName("pa_context_success_cb_t")] delegate* unmanaged<pa_context*, int, void*, void> cb, void* userdata);
+
+    [DllImport("libpulse", ExactSpelling = true)]
+    public static extern void pa_context_set_subscribe_callback(pa_context* c, [NativeTypeName("pa_context_subscribe_cb_t")] delegate* unmanaged<pa_context*, pa_subscription_event_type_t, uint, void*, void> cb, void* userdata);
 }

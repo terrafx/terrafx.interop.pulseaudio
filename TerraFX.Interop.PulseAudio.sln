@@ -11,7 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{2F337CB6
 		build.sh = build.sh
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
+		Directory.Packages.props = Directory.Packages.props
 		LICENSE.md = LICENSE.md
+		NOTICE.md = NOTICE.md
+		NuGet.config = NuGet.config
 		pack.cmd = pack.cmd
 		pack.sh = pack.sh
 		restore.cmd = restore.cmd
@@ -23,8 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{2F337CB6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8793898A-6542-4606-AA82-AB14151D2D20}"
 	ProjectSection(SolutionItems) = preProject
-		docs\CODE_OF_CONDUCT.md = docs\CODE_OF_CONDUCT.md
 		docs\CODEOWNERS = docs\CODEOWNERS
+		docs\CODE_OF_CONDUCT.md = docs\CODE_OF_CONDUCT.md
 		docs\CONTRIBUTING.md = docs\CONTRIBUTING.md
 		docs\ISSUE_TEMPLATE.md = docs\ISSUE_TEMPLATE.md
 		docs\PULL_REQUEST_TEMPLATE.md = docs\PULL_REQUEST_TEMPLATE.md
@@ -283,6 +286,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helper-types", "helper-type
 		generation\PulseAudio\pulseAudio\other\helper-types\other-helper-types.h = generation\PulseAudio\pulseAudio\other\helper-types\other-helper-types.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{8F145C94-DB89-40F0-BD65-0A5D0C23EAD4}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\bug.md = .github\ISSUE_TEMPLATE\bug.md
+		.github\ISSUE_TEMPLATE\proposal.md = .github\ISSUE_TEMPLATE\proposal.md
+		.github\ISSUE_TEMPLATE\regression.md = .github\ISSUE_TEMPLATE\regression.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -340,6 +350,7 @@ Global
 		{3BEB2E21-135F-4F16-AD20-0171998A9AB2} = {61819DA1-F387-4A80-B93C-AE9D0442FD1F}
 		{FC017C5E-6CD9-4157-9ECE-F34DA23A020F} = {3BEB2E21-135F-4F16-AD20-0171998A9AB2}
 		{93CEC637-C9E8-4A59-8202-2DFF61D7A637} = {FC017C5E-6CD9-4157-9ECE-F34DA23A020F}
+		{8F145C94-DB89-40F0-BD65-0A5D0C23EAD4} = {DC4282AC-3710-4990-8051-04406F4E85B5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.PulseAudio.UnitTests
+namespace TerraFX.Interop.PulseAudio.UnitTests;
+
+/// <summary>Provides validation of the <see cref="pa_stat_info" /> struct.</summary>
+public static unsafe partial class pa_stat_infoTests
 {
-    /// <summary>Provides validation of the <see cref="pa_stat_info" /> struct.</summary>
-    public static unsafe partial class pa_stat_infoTests
+    /// <summary>Validates that the <see cref="pa_stat_info" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="pa_stat_info" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<pa_stat_info>(), Is.EqualTo(sizeof(pa_stat_info)));
-        }
+        Assert.That(Marshal.SizeOf<pa_stat_info>(), Is.EqualTo(sizeof(pa_stat_info)));
+    }
 
-        /// <summary>Validates that the <see cref="pa_stat_info" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(pa_stat_info).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="pa_stat_info" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(pa_stat_info).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="pa_stat_info" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(pa_stat_info), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="pa_stat_info" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(pa_stat_info), Is.EqualTo(20));
     }
 }
