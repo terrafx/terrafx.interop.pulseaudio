@@ -1,0 +1,214 @@
+<Solution>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/ISSUE_TEMPLATE/">
+    <File Path=".github/ISSUE_TEMPLATE/bug.md" />
+    <File Path=".github/ISSUE_TEMPLATE/proposal.md" />
+    <File Path=".github/ISSUE_TEMPLATE/regression.md" />
+  </Folder>
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/ci.yml" />
+  </Folder>
+  <Folder Name="/.root/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="build.cmd" />
+    <File Path="build.sh" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="exclusion.dic" />
+    <File Path="global.json" />
+    <File Path="LICENSE.md" />
+    <File Path="NOTICE.md" />
+    <File Path="NuGet.config" />
+    <File Path="pack.cmd" />
+    <File Path="pack.sh" />
+    <File Path="restore.cmd" />
+    <File Path="restore.sh" />
+    <File Path="TerraFX.snk" />
+    <File Path="test.cmd" />
+    <File Path="test.sh" />
+  </Folder>
+  <Folder Name="/docs/">
+    <File Path="docs/CODEOWNERS" />
+    <File Path="docs/CODE_OF_CONDUCT.md" />
+    <File Path="docs/CONTRIBUTING.md" />
+    <File Path="docs/ISSUE_TEMPLATE.md" />
+    <File Path="docs/PULL_REQUEST_TEMPLATE.md" />
+    <File Path="docs/README.md" />
+  </Folder>
+  <Folder Name="/generation/">
+    <File Path="generation/remap-transparent.rsp" />
+    <File Path="generation/remap-types.rsp" />
+    <File Path="generation/remap.rsp" />
+    <File Path="generation/settings.rsp" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/" />
+  <Folder Name="/generation/PulseAudio/other/" />
+  <Folder Name="/generation/PulseAudio/other/helper-types/">
+    <File Path="generation/PulseAudio/pulseAudio/other/helper-types/generate.rsp" />
+    <File Path="generation/PulseAudio/pulseAudio/other/helper-types/header.txt" />
+    <File Path="generation/PulseAudio/pulseAudio/other/helper-types/other-helper-types.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/" />
+  <Folder Name="/generation/PulseAudio/pulse/channelmap/">
+    <File Path="generation/PulseAudio/pulse/channelmap/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/channelmap/header.txt" />
+    <File Path="generation/PulseAudio/pulse/channelmap/pulse-channelmap.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/context/">
+    <File Path="generation/PulseAudio/pulse/context/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/context/header.txt" />
+    <File Path="generation/PulseAudio/pulse/context/pulse-context.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/def/">
+    <File Path="generation/PulseAudio/pulse/def/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/def/header.txt" />
+    <File Path="generation/PulseAudio/pulse/def/pulse-def.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/direction/">
+    <File Path="generation/PulseAudio/pulse/direction/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/direction/header.txt" />
+    <File Path="generation/PulseAudio/pulse/direction/pulse-direction.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/error/">
+    <File Path="generation/PulseAudio/pulse/error/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/error/header.txt" />
+    <File Path="generation/PulseAudio/pulse/error/pulse-error.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/ext-device-manager/">
+    <File Path="generation/PulseAudio/pulse/ext-device-manager/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/ext-device-manager/header.txt" />
+    <File Path="generation/PulseAudio/pulse/ext-device-manager/pulse-ext-device-manager.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/ext-device-restore/">
+    <File Path="generation/PulseAudio/pulse/ext-device-restore/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/ext-device-restore/header.txt" />
+    <File Path="generation/PulseAudio/pulse/ext-device-restore/pulse-ext-device-restore.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/ext-stream-restore/">
+    <File Path="generation/PulseAudio/pulse/ext-stream-restore/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/ext-stream-restore/header.txt" />
+    <File Path="generation/PulseAudio/pulse/ext-stream-restore/pulse-ext-stream-restore.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/format/">
+    <File Path="generation/PulseAudio/pulse/format/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/format/header.txt" />
+    <File Path="generation/PulseAudio/pulse/format/pulse-format.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/introspect/">
+    <File Path="generation/PulseAudio/pulse/introspect/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/introspect/header.txt" />
+    <File Path="generation/PulseAudio/pulse/introspect/pulse-introspect.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/mainloop-api/">
+    <File Path="generation/PulseAudio/pulse/mainloop-api/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/mainloop-api/header.txt" />
+    <File Path="generation/PulseAudio/pulse/mainloop-api/pulse-mainloop-api.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/mainloop-signal/">
+    <File Path="generation/PulseAudio/pulse/mainloop-signal/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/mainloop-signal/header.txt" />
+    <File Path="generation/PulseAudio/pulse/mainloop-signal/pulse-mainloop-signal.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/mainloop/">
+    <File Path="generation/PulseAudio/pulse/mainloop/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/mainloop/header.txt" />
+    <File Path="generation/PulseAudio/pulse/mainloop/pulse-mainloop.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/operation/">
+    <File Path="generation/PulseAudio/pulse/operation/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/operation/header.txt" />
+    <File Path="generation/PulseAudio/pulse/operation/pulse-operation.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/proplist/">
+    <File Path="generation/PulseAudio/pulse/proplist/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/proplist/header.txt" />
+    <File Path="generation/PulseAudio/pulse/proplist/pulse-proplist.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/rtclock/">
+    <File Path="generation/PulseAudio/pulse/rtclock/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/rtclock/header.txt" />
+    <File Path="generation/PulseAudio/pulse/rtclock/pulse-rtclock.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/sample/">
+    <File Path="generation/PulseAudio/pulse/sample/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/sample/header.txt" />
+    <File Path="generation/PulseAudio/pulse/sample/pulse-sample.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/scache/">
+    <File Path="generation/PulseAudio/pulse/scache/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/scache/header.txt" />
+    <File Path="generation/PulseAudio/pulse/scache/pulse-scache.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/simple/">
+    <File Path="generation/PulseAudio/pulse/simple/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/simple/header.txt" />
+    <File Path="generation/PulseAudio/pulse/simple/pulse-simple.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/stream/">
+    <File Path="generation/PulseAudio/pulse/stream/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/stream/header.txt" />
+    <File Path="generation/PulseAudio/pulse/stream/pulse-stream.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/subscribe/">
+    <File Path="generation/PulseAudio/pulse/subscribe/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/subscribe/header.txt" />
+    <File Path="generation/PulseAudio/pulse/subscribe/pulse-subscribe.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/thread-mainloop/">
+    <File Path="generation/PulseAudio/pulse/thread-mainloop/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/thread-mainloop/header.txt" />
+    <File Path="generation/PulseAudio/pulse/thread-mainloop/pulse-thread-mainloop.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/timeval/">
+    <File Path="generation/PulseAudio/pulse/timeval/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/timeval/header.txt" />
+    <File Path="generation/PulseAudio/pulse/timeval/pulse-timeval.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/utf8/">
+    <File Path="generation/PulseAudio/pulse/utf8/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/utf8/header.txt" />
+    <File Path="generation/PulseAudio/pulse/utf8/pulse-utf8.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/util/">
+    <File Path="generation/PulseAudio/pulse/util/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/util/header.txt" />
+    <File Path="generation/PulseAudio/pulse/util/pulse-util.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/version/">
+    <File Path="generation/PulseAudio/pulse/version/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/version/header.txt" />
+    <File Path="generation/PulseAudio/pulse/version/pulse-version.h" />
+  </Folder>
+  <Folder Name="/generation/PulseAudio/pulse/volume/">
+    <File Path="generation/PulseAudio/pulse/volume/generate.rsp" />
+    <File Path="generation/PulseAudio/pulse/volume/header.txt" />
+    <File Path="generation/PulseAudio/pulse/volume/pulse-volume.h" />
+  </Folder>
+  <Folder Name="/scripts/">
+    <File Path="scripts/build.ps1" />
+    <File Path="scripts/build.sh" />
+    <File Path="scripts/cibuild.cmd" />
+    <File Path="scripts/cibuild.sh" />
+  </Folder>
+  <Folder Name="/sources/">
+    <File Path="sources/Directory.Build.props" />
+    <File Path="sources/Directory.Build.targets" />
+  </Folder>
+  <Folder Name="/sources/Interop/">
+    <File Path="tests/Interop/.editorconfig" />
+  </Folder>
+  <Folder Name="/sources/Interop/PulseAudio/">
+    <Project Path="sources/Interop/PulseAudio/TerraFX.Interop.PulseAudio.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <File Path="tests/Directory.Build.props" />
+    <File Path="tests/Directory.Build.targets" />
+  </Folder>
+  <Folder Name="/tests/Interop/" />
+  <Folder Name="/tests/Interop/PulseAudio/">
+    <Project Path="tests/Interop/PulseAudio/TerraFX.Interop.PulseAudio.UnitTests.csproj" />
+  </Folder>
+</Solution>

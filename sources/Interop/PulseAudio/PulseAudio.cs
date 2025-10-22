@@ -4,6 +4,8 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
+[assembly: DefaultDllImportSearchPaths(DllImportSearchPath.SafeDirectories)]
+
 namespace TerraFX.Interop.PulseAudio;
 
 public static unsafe partial class PulseAudio
@@ -12,7 +14,10 @@ public static unsafe partial class PulseAudio
 
     static PulseAudio()
     {
-        NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+        if (!Configuration.DisableResolveLibraryHook)
+        {
+            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+        }
     }
 
     private static IntPtr OnDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
@@ -22,7 +27,7 @@ public static unsafe partial class PulseAudio
             return nativeLibrary;
         }
 
-        if (libraryName.Equals("libpulse") && TryResolveLibPulse(assembly, searchPath, out nativeLibrary))
+        if (libraryName.Equals("libpulse", StringComparison.OrdinalIgnoreCase) && TryResolveLibPulse(assembly, searchPath, out nativeLibrary))
         {
             return nativeLibrary;
         }

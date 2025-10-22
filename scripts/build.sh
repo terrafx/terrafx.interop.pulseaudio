@@ -201,7 +201,7 @@ fi
 RepoRoot="$ScriptRoot/.."
 
 if [[ -z "$solution" ]]; then
-  solution="$RepoRoot/TerraFX.Interop.PulseAudio.sln"
+  solution="$RepoRoot/TerraFX.Interop.PulseAudio.slnx"
 fi
 
 ArtifactsDir="$RepoRoot/artifacts"
@@ -221,8 +221,7 @@ if [[ ! -z "$architecture" ]]; then
   DotNetInstallDirectory="$ArtifactsDir/dotnet"
   CreateDirectory "$DotNetInstallDirectory"
 
-  . "$DotNetInstallScript" --channel 6.0 --version latest --install-dir "$DotNetInstallDirectory" --architecture "$architecture"
-  . "$DotNetInstallScript" --channel 7.0 --version latest --install-dir "$DotNetInstallDirectory" --architecture "$architecture"
+  . "$DotNetInstallScript" --channel 10.0 --version latest --install-dir "$DotNetInstallDirectory" --architecture "$architecture"
 
   PATH="$DotNetInstallDirectory:$PATH:"
 fi
